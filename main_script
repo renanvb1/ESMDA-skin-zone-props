@@ -2,7 +2,7 @@ clc
 close all;
 fclose all;
 
-Renan_multilayer_VW_1;
+multilayer_VW_1;
 Sj_true = Sj;
 seq=dot(qj(end,:),Sj)/sum(qj(end,:));
 rskin_true=rskinj;
