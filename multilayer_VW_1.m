@@ -155,7 +155,7 @@ d=floor(log10(max(pwf)))+1; d=10^d;
 axis([a,b,c,d])
 title('Pressure and Pressure Derivative during Injection')
 xlabel('t (h)')
-ylabel('P, deltaP (kgf/cm²)')
+ylabel('P, deltaP (kgf/cmÂ²)')
 grid on
 % plotting results during falloff
 % figure(2)
@@ -165,7 +165,7 @@ grid on
 % axis([a,b,c,d])
 % title('Pressure and Pressure Derivative during Falloff')
 % xlabel('t (h)')
-% ylabel('P, deltaP (kgf/cm²)')
+% ylabel('P, deltaP (kgf/cmÂ²)')
 
 % res=[t(11:dim/2) pwf(11:dim/2) dpwf(11:dim/2) deltapo(11:dim/2) deltapl(11:dim/2)];
 % res=[res; t(dim/2+11:dim) pwf(dim/2+11:dim) dpwf(dim/2+11:dim) deltapo(dim/2+11:dim) deltapl(dim/2+11:dim)];
