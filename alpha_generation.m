@@ -19,13 +19,6 @@ switch a
         alpha = ones(Na, 1)*Na;
         N = Na;
         gama = 1;
-    case 1
-        % METHOD PROPOSED BY THIAGO 1
-        v = diag(S(1:Na, 1:Na));
-        vsq = v.^2;
-        alpha = vsq*sum(1./vsq);
-        N = Na;
-        gama = 1;
         
     case 3
         % METHOD PROPOSED BY RAFIEE 2017
