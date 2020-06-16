@@ -27,62 +27,6 @@ switch a
         N = Na;
         gama = 1;
         
-    case 2
-        % METHOD PROPOSED BY THIAGO 2
-        v = diag(S);
-        anamax = 1.5;
-        sum_v = sum(v);
-        a = 0.99;
-        
-        for i = 1:length(v)
-            
-            sum_aux = sum(v(1:i));
-            if (sum_aux > a*sum_v)
-                p = i;
-                break;
-            end
-            
-        end
-        
-        vm = mean(v(1:p));
-        vmsq = vm^2;
-        
-        anam = mean(v(end))^2;
-        p = 1;
-        while (anam <= 1)
-            anam = mean(v(end-p:end))^2;
-            p = p+1;
-        end
-        
-        
-        if(anam > anamax)
-            v_1 = v(v>1).^2;
-            anam = min(anamax, v_1(end)); %anam;
-        end
-        
-        f = @(x)(descobrir_Na(x, anam) - Na);
-        
-        cont = 1;
-        while(f(vmsq) > 0)
-%             if (anam > anamax)
-                Na = Na + 1;
-%             else
-%                 anam = anam - 0.01;
-%             end
-            f = @(x)(descobrir_Na(x, anam) - Na);
-            cont = cont + 1;
-        end
-        
-        a1 = bisection(f, vmsq, 10e50);
-        gama = ( anam/a1 )^( 1/(Na - 1));
-        alpha = zeros(Na, 1);
-        alpha(1) = a1;
-        
-        for i = 2:Na
-            alpha(i) = alpha(i-1)*gama;
-        end
-        N = Na;
-        
     case 3
         % METHOD PROPOSED BY RAFIEE 2017
         v = diag(S);
